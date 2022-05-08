@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<title>遅刻報告</title>
+</head>
+<body>
+
+<header>
+  <div class="box">
+    <p>
+    ルールせつめい<br>
+    あなたの上司は超気まぐれ。きげんの良し悪しで反応がころころ変わります。<br>
+    一方、朝が弱くてしょっちゅう寝坊してしまうあなた。
+    <img src="..//kadai/img/nebou_man.png" alt="" class="nebou"><br>
+    会社について第一声、上司になんて説明する？<br>
+    上司のごきげんを察知して適切な説明を選ぼう！<br>
+    <img src="..//kadai/img/gogo.jpeg" alt="" class="gogo"><br>
+    <img src="..//kadai/img/pose_ushirode_man.png" alt="" class="joshi">
+    
+    </p>
+  </div>
+
+</header>
+
+<main>
+  <h1 class="main">
+    <div class="answergazou"><img src="..//kadai/img/businesswoman2_kangaechu.png" alt=""></div>
+      <div><ul class="playerAnswer">
+      <div><li class="answer1" id="0_btn" value="平謝り" onclick="resp(0)">本当にすみません！言い訳はありません！</li></div>
+      <div><li class="answer2" id="1_btn" value="素直" onclick="resp(1)">シンプルに寝坊してしまいました。</li></div>
+      <div><li class="answer3" id="2_btn" value="言い訳" onclick="resp(2)">昨日あなたと飲んでいて飲みすぎてしまいました。</li></div>
+    </ul></div>
+  </h1>
+  <h2 class="result">
+    <div id="player">あなたは</div>
+    <div id="computer">今日の上司は</div>
+    <div id="resultMsg">その結果・・・</div>
+  </h2>
+
+  <div class="computerAnswer">
+    <div></div>
+  </div>
+</main>
+
+
+<script>
+
+//関数(resp)の定義
+function resp(playerSelect) {
+  let result; 
+  let player;
+  let computer;
+  let resultMsg;
+  let playerSelectHand;
+  let comSelectHand;
+  let resultString;
+  let random = Math.random();
+  let comSelect = Math.floor(random * 3);
+  console.log (comSelect);
+  //相手の手が出たときに画像を出したいが、どうやって出せばいいのかわからない…//
+  console.log (playerSelect);
+
+  //勝ち負けは、0：負け、1:勝ち、2:あいこ
+  if (comSelect == 0){
+  //不機嫌(0)のときは必ずプレイヤーは負け)
+  result = 0
+  } else if (comSelect == 2) {
+  //違う場合は条件によってわける
+    //二日酔い(2)のときはランダムに勝敗がきまる)
+    result = Math.random();
+    } else if (comSelect == 0,1) {
+      //pcは1(上機嫌)
+    //プレイヤーが0(平謝り)か1(素直)
+      result = 1;
+    } else {
+    //プレイヤーが2(言い訳)
+      result = 0
+    }
+  
+
+
+console.log(result);{
+
+    if (playerSelect == 0) {
+        playerSelectHand = 'とにかく謝りました。';
+    } else if (playerSelect == 1) {
+        playerSelectHand = '素直に寝坊したと言いました。';
+    } else {
+        playerSelectHand = "上司のせいにしました。";
+    }
+
+    if (comSelect == 0) {
+        comSelectHand = '不機嫌';
+    } else if (comSelect == 1) {
+        comSelectHand = '上機嫌';
+    } else {
+        comSelectHand = 'なんと二日酔いで、聞いているのか聞いていないのかわかりません';
+    }
+
+    if (result == 0) {
+        resultString = 'こっぴどく叱られました(負け)。';
+    } else if (result == 1) {
+        resultString = '見逃してもらえました(勝ち)。';
+    } else {
+        resultString = '上司は無言でスルーでした(あいこ)。';
+    }
+    
+    document.getElementById ("player").innerHTML = "あなたは" + playerSelectHand;
+    document.getElementById("computer").innerHTML="今日の上司は" + comSelectHand;
+    document.getElementById("resultMsg").innerHTML = "結果は" + resultString;
+    //
+}
+}
+    
+
+</script>
+<footer></footer>
+</body>
+</html>

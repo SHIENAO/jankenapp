@@ -1,0 +1,170 @@
+body{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'DotGothic16', sans-serif;
+}
+header{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    display: flex;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 18px;
+}
+.box{
+    margin:2em auto;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    
+}
+.box:before, .box:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+    
+}
+.box:before {left: 10px;}
+.box:after {right: 10px;}
+/*線の重なり部分*/
+.box p {
+    display:inline-block;
+    margin: 2px; 
+    padding: 2px;
+    object-fit: contain;
+}
+.nebou{
+    display:inline-block;
+    vertical-align: middle;
+    width: 10%;
+    height: auto;
+}
+.joshi{
+    display:inline-block;
+    vertical-align: middle;
+    width: 10%;
+    max-height: auto;
+}
+.gogo{
+    vertical-align: middle;
+    width: 130px;
+    max-height: auto;
+}
+.main{
+    border-bottom:1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    border: 2px #ccc solid;
+    margin: 1em 0 1em;
+}
+.answergazou{
+    width: 33%;
+    margin: 50px 10px;
+    padding: 0;
+}
+.playerAnswer{
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 15px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 25px;
+    background: #FFF;
+    border: solid 3px #555;
+    box-sizing: border-box;
+}
+      
+.playerAnswer:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    margin-top: -12px;
+    border: 12px solid transparent;
+    border-right: 12px solid #FFF;
+    z-index: 2;
+}
+      
+.playerAnswer:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -14px;
+    border: 14px solid transparent;
+    border-right: 14px solid #555;
+    z-index: 1;
+}
+      
+.playerAnswer p {
+        margin: 0;
+        padding: 0;
+      }
+li{
+    text-align: center;
+    list-style-type:none;
+    background-color: #FFF;
+    padding:1em;
+    margin:0.5em auto;
+    width:50%;
+    cursor: pointer;
+}
+li:hover{
+    background: dodgerblue;
+    color:#fff;
+}
+
+.result{
+    margin-right: auto;
+    margin-left: auto;
+    margin:2em auto;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+        
+    }
+ .result:before, .result:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        width: 2px;
+        height: -webkit-calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-color: black;
+        
+    }
+    .result:before {left: 10px;}
+    .result:after {right: 10px;}
+    /*線の重なり部分*/
+    .result p {
+        display:inline-block;
+        margin: 2px; 
+        padding: 2px;
+        object-fit: contain;
+    }
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
